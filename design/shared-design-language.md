@@ -8,6 +8,7 @@
 
 - 品牌气质
 - 语义色角色
+- 跨端共享核心令牌的基线值
 - 排版角色
 - 布局节奏
 - 动效节奏
@@ -84,6 +85,62 @@
 | `palette.secondary` | 当前 palette 辅色 |
 | `palette.accent` | 当前 palette 点缀色 |
 
+### 3.1 跨端核心令牌基线值
+
+以下数值是 DayPalette 在 HarmonyOS、Web、Android、iOS 上共享的 **Canonical Baseline**。
+
+原则：
+
+- 各端可以封装成自己的变量命名方式，但默认值应与这里保持一致。
+- 若因平台材质、暗色模式、无障碍对比度而需要偏离，必须先在各端实现文档中注明偏离原因，并保持语义角色不变。
+- 涉及按钮、卡片、顶栏/底栏、正文等基础 UI 时，默认先用这里的值，而不是临时拍脑袋定色。
+
+| 角色 | 基线值 | 默认用途 |
+| --- | --- | --- |
+| `bg.page` | `#f9f8f6` | 主画布背景 |
+| `text.primary` | `#1a1a1a` | 主文案、主按钮字色、选中态 |
+| `text.muted` | `#8c8c8c` | 次要文案、说明文案 |
+| `border.subtle` | `rgba(0, 0, 0, 0.08)` | 卡片与按钮边框 |
+| `border.hairline` | `rgba(0, 0, 0, 0.03)` | 分隔线、顶栏/底栏细边 |
+| `surface.card` | `#ffffff` | 白底卡片、分组容器 |
+| `overlay.glass` | `rgba(249, 248, 246, 0.75)` | 毛玻璃条背景 |
+| `fill.inverse` | `#1a1a1a` | 主按钮底色 |
+| `text.on-inverse` | `#ffffff` | 深底按钮上的字与图标 |
+
+这意味着：
+
+- Web 端主按钮默认应使用 `fill.inverse` 作为底色，也就是 `#1a1a1a`。
+- Web 端主按钮文字与图标默认应使用 `text.on-inverse`，也就是 `#ffffff`。
+- Web 端页面主背景默认应使用 `bg.page`，也就是 `#f9f8f6`。
+- Web 端毛玻璃顶栏 / 底栏默认应使用 `overlay.glass`，也就是 `rgba(249, 248, 246, 0.75)`。
+
+### 3.2 动态配色令牌与默认占位值
+
+`palette.main`、`palette.secondary`、`palette.accent` 是动态令牌，正常情况下来自当前激活的 palette 数据，而不是一个永远固定的品牌色。
+
+但为了保证多端在“首屏默认态 / 空状态 / 加载占位态”下保持一致，约定默认占位值如下：
+
+| 角色 | 默认占位值 | 说明 |
+| --- | --- | --- |
+| `palette.main` | `#E8D8D3` | 默认主色块 |
+| `palette.secondary` | `#C5B9B6` | 默认辅色块 |
+| `palette.accent` | `#5D637A` | 默认点缀色块 |
+
+### 3.3 跨端落地规则
+
+推荐各端都维持同一层语义命名，再映射到平台实现：
+
+- Web：CSS 变量，例如 `--dp-bg-page`、`--dp-fill-inverse`
+- HarmonyOS：ArkTS 常量或资源令牌
+- Android：Compose / XML color token
+- iOS：Swift token enum / asset catalog 映射
+
+共同要求：
+
+- 先写语义 token，再映射到组件，不要在组件里直接散落 hex。
+- 共享文档负责定义语义角色与核心基线值。
+- 各端仓库只补自己的实现细节、状态差异与平台专属 token。
+
 ## 4. 字体角色
 
 建议保持同一套中英文分工：
@@ -111,6 +168,8 @@
 ## 6. 治理建议
 
 共享设计语言应以这里为准；各仓库只维护自己的实现映射。
+
+这里除了设计原则外，也负责维护跨端共享核心 token 的默认基线值；后续新增 Web、Android、iOS 时，都应先对齐 §3 的角色与数值，再在各端仓库中完成平台映射。
 
 推荐分层：
 
