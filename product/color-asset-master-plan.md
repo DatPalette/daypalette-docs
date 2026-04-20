@@ -10,11 +10,11 @@
 - 内容系统对象总览：[`./content-system-overview.md`](./content-system-overview.md)
 - 资产生命周期：[`../operations/color-asset-lifecycle.md`](../operations/color-asset-lifecycle.md)
 - 工作台策展流程：[`../operations/workbench-curation-workflow.md`](../operations/workbench-curation-workflow.md)
-- 智能配策略（暂存于 App 仓）：[`../../day_palette/docs/product/strategy/conservative-smart-matching-strategy.md`](../../day_palette/docs/product/strategy/conservative-smart-matching-strategy.md)
+- 智能配策略：[`./smart-matching-strategy.md`](./smart-matching-strategy.md)
 - 灵感入口（App 端专属）：[`../../day_palette/docs/product/strategy/inspiration-entry.md`](../../day_palette/docs/product/strategy/inspiration-entry.md)
-- 策展工作台产品规格（暂存于 App 仓）：[`../../day_palette/docs/product/strategy/palette-curation-workbench.md`](../../day_palette/docs/product/strategy/palette-curation-workbench.md)
+- 策展工作台产品规格：[`./workbench-product-spec.md`](./workbench-product-spec.md)
 
-> 部分链接仍指向 `day_palette` 仓库，将在后续提升轮次中收口到本仓。
+> 完整上下文请以本仓 `daypalette-docs/` 下的文档为准；App / 资产仓 / 工作台仓在本文以外仅保留实现映射。
 
 ## 1. 文档定位
 

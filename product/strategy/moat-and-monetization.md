@@ -602,4 +602,4 @@ DayPalette 不应该把自己讲成“配色工具”，而更适合讲成：
 当前已落下的延伸文档：
 
 - [`../color-asset-library.md`](../color-asset-library.md)  
-- [`../../day_palette/docs/product/strategy/conservative-smart-matching-strategy.md`](../../day_palette/docs/product/strategy/conservative-smart-matching-strategy.md)（暂存于 App 仓，后续将提升）
+- [`../smart-matching-strategy.md`](../smart-matching-strategy.md)
