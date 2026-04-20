@@ -40,6 +40,7 @@ daypalette-docs/
 - `architecture/repository-boundaries.md`：四仓边界、真相源、生成物边界
 - `operations/color-asset-lifecycle.md`：从 source 到 App 的完整操作链路
 - `operations/workbench-curation-workflow.md`：工作台的策展职责与状态沉淀
+- `operations/git-commit-workflow.md`：四仓共享的 Git 提交规范
 - `design/shared-design-language.md`：跨移动端与 Web 的共享设计语言
 - `product/content-system-overview.md`：配色内容系统与核心业务对象
 
