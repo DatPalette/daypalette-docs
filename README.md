@@ -43,6 +43,9 @@ daypalette-docs/
 - `operations/git-commit-workflow.md`：四仓共享的 Git 提交规范
 - `design/shared-design-language.md`：跨移动端与 Web 的共享设计语言
 - `product/content-system-overview.md`：配色内容系统与核心业务对象
+- `product/color-asset-master-plan.md`：配色资产运营统一主文档（产品 / 技术 / 执行 / AI 协作）
+- `product/color-asset-library.md`：配色资产三层结构、字段草表与命名规则
+- `product/strategy/moat-and-monetization.md`：护城河、目标用户、价值与付费战略讨论
 
 ## 文档治理原则
 
