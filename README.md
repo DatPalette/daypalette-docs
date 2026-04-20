@@ -48,6 +48,7 @@ daypalette-docs/
 - `product/smart-matching-strategy.md`：智能配第一阶段的保守版策略与运营维护口径
 - `product/workbench-product-spec.md`：配色策展工作台的产品规格与状态机
 - `product/strategy/moat-and-monetization.md`：护城河、目标用户、价值与付费战略讨论
+- `ai-workflow/collaboration-model.md`：四仓共享的 AI 协作模型与 Prompt 工作流通用原则
 
 ## 文档治理原则
 
