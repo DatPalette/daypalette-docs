@@ -1,18 +1,20 @@
 # DayPalette Docs · AGENTS
 
-本仓库（`daypalette-docs`）是 DayPalette 的**顶层共享文档仓**，承接四仓共用的：
+本仓库（`daypalette-docs`）是 DayPalette 的**顶层共享文档仓**，承接当前共享原则与已归档历史方案说明：
 
 - 业务概念与内容系统定义（`product/`）
-- 资产生产、策展、校验、发布的操作流程（`operations/`）
+- 资产生产、策展、校验、发布的历史流程归档（`archive/` / `operations/`）
 - 多仓边界与协作关系（`architecture/`）
 - 跨端共享设计语言（`design/`）
+
+> 归档提示：自 2026-04-29 起，`daypalette-color-assets` 与 `daypalette-palette-workbench` 对应的旧配色运营方案已整体归档。统一入口见 [`archive/color-operations-reset-2026-04.md`](./archive/color-operations-reset-2026-04.md)。在新方案落盘前，不得把 `source / bundle / workbench` 相关旧文档当成现行真相源。
 
 ## 写作边界
 
 仅写**跨仓共识**。以下内容应留在各自实现仓：
 
 - HarmonyOS / ArkUI 专属实现 → `day_palette`
-- Web 工作台内部实现 → `daypalette-palette-workbench`
+- 旧 Web 工作台内部实现曾位于 `daypalette-palette-workbench`；现已归档，未来以新方案文档为准
 - 单仓的构建 / 发布 / 测试脚本说明 → 各自仓
 
 ## 治理原则
@@ -35,7 +37,7 @@
 
   来源：day_palette/docs/product/strategy/color-asset-unified-master-plan.md
   ```
-- 跨仓变更时，本仓通常作为**收口环节**最后提交（参见共享版 §6）。
+- 跨仓变更时，本仓通常作为**收口环节**最后提交；旧 assets/workbench 顺序仅保留历史记录（参见共享版 §6）。
 
 ## 不提交清单
 

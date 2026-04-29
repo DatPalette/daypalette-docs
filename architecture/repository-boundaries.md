@@ -1,4 +1,7 @@
-# DayPalette 多仓库边界
+# DayPalette 多仓库边界（已归档）
+
+> 归档状态：自 2026-04-29 起，本文描述的 `daypalette-color-assets` / `daypalette-palette-workbench` 多仓协作方案已停止使用。统一说明见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留历史边界记录，不得作为新方案真相源。
 
 ## 1. 目标
 

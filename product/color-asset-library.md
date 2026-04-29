@@ -1,7 +1,8 @@
-# 配色资产库结构与低成本维护方案
+# 配色资产库结构与低成本维护方案（已归档）
 
+> 归档状态：自 2026-04-29 起，本文对应的三层资产合同与旧多仓配色运营方案已整体归档。统一入口见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留历史字段与结构记录，不得作为新方案真相源。
 > 来源：原 `day_palette/docs/product/strategy/color-asset-library-plan.md`，2026-04-20 提升到顶层共享层。
-> 本文定义 DayPalette 三层资产结构、字段草表与命名规则，是 `day_palette` / `daypalette-color-assets` / `daypalette-palette-workbench` 共同消费的合同。
 
 ## 1. 文档目的
 

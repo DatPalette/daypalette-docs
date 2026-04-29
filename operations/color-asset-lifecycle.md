@@ -1,4 +1,7 @@
-# 配色资产生命周期
+# 配色资产生命周期（已归档）
+
+> 归档状态：自 2026-04-29 起，本文描述的 `source -> workbench -> bundle -> App` 旧链路已停止使用。统一说明见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留历史操作链路说明，不得作为新方案真相源。
 
 ## 1. 目标
 

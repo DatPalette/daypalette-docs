@@ -1,7 +1,8 @@
-# 配色运营工作台 PRD
+# 配色运营工作台 PRD（已归档）
 
-> 本版于 2026-04-21 重写，目的是把 workbench 从“单页审阅器”重新定义为“围绕资产维护、专题组织、文案落地与发布检查展开的本地运营工作台”。
-> 技术实现与仓库边界参考 [../architecture/workbench-technical-architecture.md](../architecture/workbench-technical-architecture.md)；高频策展流程参考 [../operations/workbench-curation-workflow.md](../operations/workbench-curation-workflow.md)；内容结构与资产合同参考 [content-system-overview.md](content-system-overview.md)、[color-asset-library.md](color-asset-library.md)、[smart-matching-strategy.md](smart-matching-strategy.md) 与 [../operations/color-asset-lifecycle.md](../operations/color-asset-lifecycle.md)。
+> 归档状态：自 2026-04-29 起，本文对应的本地 workbench 产品方案已整体归档。统一入口见 [../archive/color-operations-reset-2026-04.md](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留历史产品判断，不得作为新方案真相源。
+> 本版于 2026-04-21 重写，原本目的是把 workbench 从“单页审阅器”重新定义为“围绕资产维护、专题组织、文案落地与发布检查展开的本地运营工作台”。
 
 ## 1. 文档定位
 

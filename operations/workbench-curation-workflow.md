@@ -1,4 +1,7 @@
-# 工作台策展流程
+# 工作台策展流程（已归档）
+
+> 归档状态：自 2026-04-29 起，本文对应的本地 workbench 运营流程已停止使用。统一说明见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留历史工作流记录，不得作为新方案真相源。
 
 ## 1. 本文的定位
 

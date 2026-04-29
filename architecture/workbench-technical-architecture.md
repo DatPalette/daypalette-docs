@@ -1,8 +1,8 @@
-# 配色策展工作台技术架构
+# 配色策展工作台技术架构（已归档）
 
+> 归档状态：自 2026-04-29 起，本文对应的 `daypalette-palette-workbench` / `daypalette-color-assets` 方案已整体归档。统一说明见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留历史技术选型与边界记录，不得作为新方案真相源。
 > 来源：原 `day_palette/docs/architecture/palette-curation-workbench-technical-implementation.md`，2026-04-20 提升到顶层共享层。
-> 本文聚焦 `daypalette-palette-workbench` 的工程选型、分层、数据流与与 `daypalette-color-assets` / `day_palette` 的协作边界；产品规格请参考 [`../product/workbench-product-spec.md`](../product/workbench-product-spec.md)，日常策展流程请参考 [`../operations/workbench-curation-workflow.md`](../operations/workbench-curation-workflow.md)。
-> 部分章节保留了建仓前的决策语气，作为技术选型依据与历史判断记录。
 
 ## 1. 文档定位
 

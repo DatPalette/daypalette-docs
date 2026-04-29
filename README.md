@@ -2,12 +2,14 @@
 
 DayPalette 顶层共享文档仓库。
 
-这个仓库承接四个项目之间的公共说明，优先放这些内容：
+> 归档提示：自 2026-04-29 起，旧配色运营多仓方案已整体归档，`daypalette-color-assets` 与 `daypalette-palette-workbench` 不再属于当前规划。统一入口见 [`archive/color-operations-reset-2026-04.md`](archive/color-operations-reset-2026-04.md)。在新方案落盘前，不要把 `source / bundle / workbench` 相关旧文档当成现行真相源。
+
+这个仓库承接当前共享原则与已归档历史方案说明，优先放这些内容：
 
 - 跨项目都成立的业务概念与内容系统定义
-- 资产生产、策展、校验、发布的操作流程
-- 多仓库边界、真相源与协作关系
-- 需要在移动端与 Web 端保持一致的共享设计语言
+- 已确认仍有效的共享设计语言与通用协作原则
+- 旧配色运营方案的归档说明与历史决策材料
+- 需要由共享层先定义、再由实现仓落地的跨仓约束
 
 不放在这里的内容：
 
@@ -21,8 +23,8 @@ DayPalette 顶层共享文档仓库。
 | 仓库 | 主要职责 |
 | --- | --- |
 | `day_palette` | HarmonyOS 移动端、运行时消费态资源、App 专属实现文档 |
-| `daypalette-color-assets` | 配色资产 source / bundle、策展状态文件、资产版本提交 |
-| `daypalette-palette-workbench` | 配色策展界面、校验与打包脚本 |
+| `daypalette-color-assets` | 已归档并删除；原负责配色资产 source / bundle 与策展状态文件 |
+| `daypalette-palette-workbench` | 已归档并删除；原负责配色策展界面与校验 / 打包脚本 |
 | `daypalette-docs` | 顶层共享产品 / 流程 / 架构 / 设计语言文档 |
 
 ## 目录
@@ -35,22 +37,28 @@ daypalette-docs/
   product/
 ```
 
-## 当前首批文档
+## 当前仍可直接使用的文档
 
-- `architecture/repository-boundaries.md`：四仓边界、真相源、生成物边界
-- `architecture/workbench-technical-architecture.md`：工作台的工程选型、分层、数据流与跨仓协作边界
-- `operations/color-asset-lifecycle.md`：从 source 到 App 的完整操作链路
-- `operations/workbench-curation-workflow.md`：工作台的策展职责与状态沉淀
-- `operations/git-commit-workflow.md`：四仓共享的 Git 提交规范
-- `operations/remote-json-rollout-plan.md`：阶段 1 远端 JSON 覆盖的托管选型、版本边界与最小控制要求
+- `archive/color-operations-reset-2026-04.md`：旧配色运营方案归档入口与 AI 使用约束
 - `design/shared-design-language.md`：跨移动端与 Web 的共享设计语言
+- `operations/git-commit-workflow.md`：当前仍适用于 `day_palette` / `daypalette-docs` 的提交流程；旧 assets/workbench 规则仅保留历史记录
+- `operations/remote-json-rollout-plan.md`：阶段 1 远端 JSON 覆盖的托管选型、版本边界与最小控制要求
 - `product/content-system-overview.md`：配色内容系统与核心业务对象
-- `product/color-asset-master-plan.md`：配色资产运营统一主文档（产品 / 技术 / 执行 / AI 协作）
-- `product/color-asset-library.md`：配色资产三层结构、字段草表与命名规则
 - `product/smart-matching-strategy.md`：智能配第一阶段的保守版策略与运营维护口径
-- `product/workbench-product-spec.md`：配色策展工作台的产品规格与状态机
 - `product/strategy/moat-and-monetization.md`：护城河、目标用户、价值与付费战略讨论
-- `ai-workflow/collaboration-model.md`：四仓共享的 AI 协作模型与 Prompt 工作流通用原则
+- `ai-workflow/collaboration-model.md`：共享 AI 协作模型与 Prompt 工作流通用原则
+
+## 已归档的旧配色运营文档
+
+以下文档保留为历史记录，不再作为新方案真相源：
+
+- `architecture/repository-boundaries.md`
+- `architecture/workbench-technical-architecture.md`
+- `operations/color-asset-lifecycle.md`
+- `operations/workbench-curation-workflow.md`
+- `product/color-asset-master-plan.md`
+- `product/color-asset-library.md`
+- `product/workbench-product-spec.md`
 
 ## 文档治理原则
 

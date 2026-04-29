@@ -1,13 +1,18 @@
-# Git 提交工作流（跨仓共享版）
+# Git 提交工作流（共享层 + 旧方案归档）
 
-本文是 DayPalette 四个仓库共同遵守的 Git 提交规范，供 Cursor / Copilot / Codex / 手动协作者共用。
+本文是 DayPalette 共享层 Git 提交规范与旧多仓方案的历史记录，供 Cursor / Copilot / Codex / 手动协作者共用。
 
-适用仓库：
+> 归档提示：自 2026-04-29 起，`daypalette-color-assets` 与 `daypalette-palette-workbench` 已退出当前规划。本文中涉及这两个仓库的规范、顺序与示例仅保留为历史记录；统一说明见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+
+当前仍直接适用的仓库：
 
 - `day_palette`
+- `daypalette-docs`
+
+已归档的历史仓库：
+
 - `daypalette-color-assets`
 - `daypalette-palette-workbench`
-- `daypalette-docs`
 
 > 各仓自身的 `AGENTS.md` 或 Cursor / Skill 规则可以追加**仓库特例**，但不得与本文相冲突；冲突时以本文为准。
 
@@ -51,7 +56,7 @@ DayPalette 内部使用两种风格，**取决于仓库**：
 
 ### 3.1 默认风格：`emoji + TYPE: 中文描述`
 
-适用于：`day_palette`、`daypalette-color-assets`、`daypalette-docs`。
+适用于：`day_palette`、`daypalette-docs`；`daypalette-color-assets` 的同风格提交记录仅保留为历史信息。
 
 格式：
 
@@ -80,7 +85,7 @@ emoji + TYPE: 中文描述
 
 ### 3.2 工作台风格：`TYPE: 中文描述`（无 emoji）
 
-适用于：`daypalette-palette-workbench`，由其内部 Skill `frontend-module-playbook/references/commit-workflow.md` 定义。
+适用于历史上的 `daypalette-palette-workbench`，由其内部 Skill `frontend-module-playbook/references/commit-workflow.md` 定义；当前仅保留为归档记录。
 
 类型枚举与默认风格保持一致（`NEW` / `IMPROVE` / `FIX` / `DOC` / `RELEASE` / `TEST` / `BREAKING`），仅去掉 emoji 前缀。
 
@@ -112,7 +117,9 @@ emoji + TYPE: 中文描述
 
 ---
 
-## 6. 跨仓变更协作
+## 6. 跨仓变更协作（旧方案归档记录）
+
+以下内容用于解释历史提交串联方式，不再作为新方案默认顺序。
 
 很多内容动作会同时跨多个仓（例如新增一个专题配色 → assets 改 source → workbench 改校验 → day_palette 导入 bundle → daypalette-docs 更新流程说明）。
 
@@ -136,8 +143,8 @@ emoji + TYPE: 中文描述
 | 仓库 | 风格 | 主要特例 |
 |------|------|----------|
 | `day_palette` | emoji 风格 | 同时改 `docs/` 与 `entry/` 时默认**先文档、后代码**；不提交 `build/` / `.hvigor/` / `oh_modules/` / 签名与证书 |
-| `daypalette-color-assets` | emoji 风格 | `source/` 与 `bundle/` 必须**分开提交**（先 source 后 bundle）；`bundle/` 视为生成物，由脚本统一更新；`changelog/` 条目单独 commit |
-| `daypalette-palette-workbench` | 无 emoji 风格 | 由 `frontend-module-playbook` Skill 管理；不提交 `dist/` / `node_modules/` / `.vite/`；`scripts/` 与 `src/` 改动建议分开 |
+| `daypalette-color-assets` | emoji 风格 | 已归档并删除；表中规则仅保留为历史记录 |
+| `daypalette-palette-workbench` | 无 emoji 风格 | 已归档并删除；表中规则仅保留为历史记录 |
 | `daypalette-docs` | emoji 风格 | 单仓改动直接用 `📖 DOC:`；从子仓"提升上来"的内容，commit 正文里注明来源路径 |
 
 ---

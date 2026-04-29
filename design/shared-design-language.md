@@ -175,6 +175,6 @@
 
 1. `daypalette-docs/design/`：共享设计原则与语义层
 2. `day_palette/docs/design/`：ArkUI 页面、组件、令牌实现
-3. `daypalette-palette-workbench/src/`：Web 端 CSS 变量、布局与组件实现
+3. Web / 运营侧实现仓：CSS 变量、布局与组件实现（旧 `daypalette-palette-workbench/src/` 路径已归档，未来以新方案文档为准）
 
 如果未来某一端的实现偏离共享语言，应优先先修正这里的原则文档，再决定是否接受偏离。

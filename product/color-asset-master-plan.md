@@ -1,7 +1,8 @@
-# 配色资产运营统一主文档
+# 配色资产运营统一主文档（已归档）
 
+> 归档状态：自 2026-04-29 起，本文与其所依赖的 `daypalette-color-assets` / `daypalette-palette-workbench` 方案已整体归档。统一入口见 [`../archive/color-operations-reset-2026-04.md`](../archive/color-operations-reset-2026-04.md)。
+> 使用约束：本文仅保留 2026-04 之前的历史判断，不得作为新方案真相源。
 > 来源：原 `day_palette/docs/product/strategy/color-asset-unified-master-plan.md`，2026-04-20 提升到顶层共享层。
-> 本文是 DayPalette 配色资产运营的**跨仓战略入口**，涵盖产品 / 技术 / 执行 / AI 协作四层判断。
 
 ## 快速导航
 
