@@ -1,5 +1,9 @@
 # 配色运营旧方案归档说明（2026-04-29）
 
+> 新方案草案入口：
+> - [`../product/color-asset-admin-prd.md`](../product/color-asset-admin-prd.md)
+> - [`../architecture/color-asset-admin-technical-architecture.md`](../architecture/color-asset-admin-technical-architecture.md)
+
 ## 1. 当前状态
 
 自 2026-04-29 起，DayPalette 现有配色运营多仓方案整体归档。
