@@ -6,6 +6,7 @@
 > 数据合同：[`../../architecture/color-asset-admin-data-contract.md`](../../architecture/color-asset-admin-data-contract.md)
 > 首轮矩阵：[`./palette-phase-1-target-matrix.md`](./palette-phase-1-target-matrix.md)
 > 采样台账模板：[`./palette-market-sampling-ledger-template.md`](./palette-market-sampling-ledger-template.md)
+> 首批采样骨架：[`./workday-market-sampling-batch-01.md`](./workday-market-sampling-batch-01.md)
 
 ## 1. 文档定位
 

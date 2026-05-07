@@ -21,11 +21,11 @@
 
 | 子主题 | 正式 palette 目标 | 结构比例 | 建议采样来源 | 备注 |
 | --- | --- | --- | --- | --- |
-| 轻正式通勤 | 8 | 6 safe + 2 expressive | 品牌通勤线官方店、西装/衬衫公开商品页、品牌春夏通勤 lookbook | 重点看米白、灰、蓝、深棕的低风险组合 |
-| 都市极简 | 8 | 6 safe + 2 expressive | 极简品牌官网、多品牌通勤电商、职场 capsule wardrobe 公开页面 | 控制黑白灰蓝的层次，不要只做纯无彩 |
-| 柔和气色 | 8 | 6 safe + 2 expressive | 女装官方店针织/衬衫页、轻通勤穿搭 lookbook、春季新品页 | 允许低饱和粉杏雾紫作为点缀 |
-| 雨雾冷静 | 8 | 6 safe + 2 expressive | 风衣/外套公开页面、冷感通勤线、都市雨季 lookbook | 偏蓝灰、雾绿、石色，不做过亮 accent |
-| 秋冬沉稳 | 8 | 6 safe + 2 expressive | 秋冬通勤系列、针织/大衣公开商品页、品牌秋冬陈列图 | 强调咖棕、炭灰、酒红棕的克制搭配 |
+| 轻正式通勤（`polished-light-commute`） | 8 | 6 safe + 2 expressive | 品牌通勤线官方店、西装/衬衫公开商品页、品牌春夏通勤 lookbook | 重点看米白、灰、蓝、深棕的低风险组合 |
+| 都市极简基底（`urban-minimal-foundation`） | 8 | 6 safe + 2 expressive | 极简品牌官网、多品牌通勤电商、职场 capsule wardrobe 公开页面 | 控制黑白灰蓝的层次，不要只做纯无彩 |
+| 柔和提气色（`soft-tone-lift`） | 8 | 6 safe + 2 expressive | 女装官方店针织/衬衫页、轻通勤穿搭 lookbook、春季新品页 | 允许低饱和粉杏雾紫作为点缀 |
+| 雨雾冷静通勤（`mist-cool-commute`） | 8 | 6 safe + 2 expressive | 风衣/外套公开页面、冷感通勤线、都市雨季 lookbook | 偏蓝灰、雾绿、石色，不做过亮 accent |
+| 暖稳秋冬通勤（`warm-grounded-commute`） | 8 | 6 safe + 2 expressive | 秋冬通勤系列、针织/大衣公开商品页、品牌秋冬陈列图 | 强调咖棕、炭灰、酒红棕的克制搭配 |
 
 ---
 
