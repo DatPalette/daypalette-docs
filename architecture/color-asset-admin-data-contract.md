@@ -349,6 +349,138 @@
 
 ## 7. 查询与写回行为
 
+## 7. Palette 溯源与审核字段合同
+
+### 7.1 目标
+
+为了支撑“市场参考驱动的配色资产运营”，`palette` 首版需要补齐一组明确的后台运营元数据字段，避免以下问题：
+
+1. 只知道最终 palette，不知道它参考了哪些公开市场样本。
+2. 只知道结果被发布，不知道它是否经过人工审核。
+3. 首轮 160 个重建和后续月更无法按批次追踪。
+4. 旧 palette 转入 `archived` 时缺少结构化原因和时间戳。
+
+### 7.2 适用范围
+
+本节字段仅适用于：
+
+1. `palettes.v1.json`
+
+这些字段属于后台运营元数据，允许出现在 `palette` 原始记录中；消费端若当前不使用这些字段，应保持前向兼容并忽略未知字段。
+
+### 7.3 字段清单
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `referenceMethod` | string | 参考方法；建议值：`market-sampled` / `editorial-derived` / `internal-recomposition` |
+| `referenceSources` | array | 参考来源列表；记录公开市场样本 |
+| `marketSignalSummary` | string | 对本 palette 提炼自哪些市场趋势的摘要 |
+| `productionBatchId` | string | 生产批次，例如 `phase1-workday-v1`、`2026-06-refresh` |
+| `reviewStatus` | string | 审核状态；建议值：`pending` / `needsRevision` / `approved` / `rejected` |
+| `reviewedAt` | string | 审核时间；未审核可为空 |
+| `reviewer` | string | 审核人；未审核可为空 |
+| `reviewNotes` | string | 审核备注；未审核可为空 |
+| `archivedAt` | string | 归档时间；仅 `status=archived` 时填写 |
+| `archiveReason` | string | 归档原因；仅 `status=archived` 时建议填写 |
+
+补充说明：
+
+1. 既有 `sourceType` 继续表达“人工策展 / 重组 / 生成”等高层来源语义。
+2. `referenceMethod` 不替代 `sourceType`，而是补充说明该条 palette 的研究与采样方法。
+
+### 7.4 `referenceSources[]` 子结构
+
+`referenceSources[]` 的每个元素建议至少包含：
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `sourceId` | string | 后台内部参考记录 ID |
+| `platform` | string | 平台名称，例如品牌官网、旗舰店平台或多品牌电商 |
+| `channelType` | string | 渠道类型；建议值：`brand-site` / `brand-flagship-store` / `multi-brand-platform` / `marketplace-brand-store` |
+| `brandName` | string | 品牌名 |
+| `sourceUrl` | string | 公开可访问链接 |
+| `observedAt` | string | 采样时间 |
+| `itemCategory` | string | 服饰品类，例如衬衫、外套、针织、半裙 |
+| `colorSummary` | string[] | 从样本中提取出的 3 到 5 个主色摘要 |
+| `notes` | string | 内部分析说明 |
+
+### 7.5 写入规则
+
+1. `status=approved` 或 `status=published` 的 palette，必须满足 `reviewStatus=approved`。
+2. `referenceMethod=market-sampled` 且 `status=approved` 或 `status=published` 时，`referenceSources.length` 至少为 3。
+3. 上述 3 条参考记录中，至少应包含 2 个不同 `platform` 值。
+4. 上述 3 条参考记录中，至少应包含 2 个不同 `brandName` 值。
+5. `status=archived` 时，必须写入 `archivedAt`；`archiveReason` 为强烈建议字段。
+6. `referenceSources` 只保存结构化链接和内部说明，不保存截图二进制或外部营销文案正文。
+
+### 7.6 `palette` 记录示例
+
+```json
+{
+  "id": "w101",
+  "slug": "soft-commute-shell",
+  "primaryColorId": "bc_0101",
+  "secondaryColorId": "bc_0045",
+  "accentColorId": "bc_0070",
+  "occasionId": "workday",
+  "moodTags": ["calm", "polished"],
+  "styleTags": ["commute", "urban"],
+  "seasonTags": ["spring", "autumn"],
+  "safetyLevel": "safe",
+  "fitPhotoScenario": false,
+  "sourceType": "curated",
+  "referenceMethod": "market-sampled",
+  "referenceSources": [
+    {
+      "sourceId": "ref_workday_001",
+      "platform": "brand-site",
+      "channelType": "brand-site",
+      "brandName": "Example Brand A",
+      "sourceUrl": "https://example.com/look-1",
+      "observedAt": "2026-05-07T09:00:00Z",
+      "itemCategory": "shirt",
+      "colorSummary": ["shell white", "soft taupe", "mist blue"],
+      "notes": "轻正式衬衫 + 灰蓝下装关系稳定。"
+    },
+    {
+      "sourceId": "ref_workday_014",
+      "platform": "official-flagship",
+      "channelType": "brand-flagship-store",
+      "brandName": "Example Brand B",
+      "sourceUrl": "https://example.com/look-2",
+      "observedAt": "2026-05-07T09:10:00Z",
+      "itemCategory": "knitwear",
+      "colorSummary": ["oat beige", "smoke grey", "soft plum"],
+      "notes": "强调柔和提气色，不做高对比。"
+    },
+    {
+      "sourceId": "ref_workday_022",
+      "platform": "multi-brand-platform",
+      "channelType": "multi-brand-platform",
+      "brandName": "Example Brand C",
+      "sourceUrl": "https://example.com/look-3",
+      "observedAt": "2026-05-07T09:20:00Z",
+      "itemCategory": "blazer",
+      "colorSummary": ["mist blue", "stone grey", "ink navy"],
+      "notes": "提供更稳的外套层次。"
+    }
+  ],
+  "marketSignalSummary": "2026 春季通勤样本中，雾蓝 + 石灰 + 柔和莓色点缀反复出现。",
+  "productionBatchId": "phase1-workday-v1",
+  "reviewStatus": "approved",
+  "reviewedAt": "2026-05-07T11:00:00Z",
+  "reviewer": "owner",
+  "reviewNotes": "保留柔和气色，但控制 accent 面积感。",
+  "status": "approved",
+  "archivedAt": "",
+  "archiveReason": ""
+}
+```
+
+---
+
+## 8. 查询与写回行为
+
 首版建议遵守以下行为：
 
 1. 资源列表默认不返回主数据 `status=deleted` 的记录。
@@ -359,10 +491,11 @@
 
 ---
 
-## 8. 当前阶段结论
+## 9. 当前阶段结论
 
 当前阶段先把以下三件事钉死即可：
 
 1. 主数据统一用 `status=deleted` 执行软删除。
 2. 字典项统一用 `isActive` 与 `isDeleted` 区分“停用”与“已删除”。
 3. `dictionaries.v1.json` 先成为可枚举字段的结构化真相源，再继续推进后台实现。
+4. `palette` 需要补齐溯源、审核和归档元数据，才能支撑首轮重建和后续月更。
